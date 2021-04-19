@@ -162,7 +162,7 @@ function App() {
   const [cellHeight, setCellHeight] = useState(45);
   const [cellWidth, setCellWidth] = useState(250);
   const [disabled, setDisabled] = useState(false);
-  const [locale, setLocale] = useState('en');
+  const [locale, setLocale] = useState('enUS');
 
   useEffect(() => {
     setSchedule(defaultAdjustedSchedule);

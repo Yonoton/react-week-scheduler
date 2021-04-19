@@ -699,10 +699,10 @@ date,
 locale)
 {
   if (getMinutes(date) === 0) {
-    return format(date, 'h', { locale: locale });
+    return format(date, 'h', _objectSpread2({}, locale));
   }
 
-  return format(date, 'h:mm', { locale: locale });
+  return format(date, 'h:mm', _objectSpread2({}, locale));
 };
 
 
@@ -1658,7 +1658,7 @@ var TimeGridScheduler = /*#__PURE__*/React__default.memo(function TimeGridSchedu
           className: classes['day-column'] }, /*#__PURE__*/
 
         React__default.createElement("div", { className: classcat([classes.cell, classes.title]) },
-        format(addDays(originDate, i), 'ddd', { locale: locale }))));}))), /*#__PURE__*/
+        format(addDays(originDate, i), 'cccc', { locale: locale }))));}))), /*#__PURE__*/
 
 
 

@@ -28,10 +28,10 @@ const formatHour = (
   locale: any,
 ) => {
   if (getMinutes(date) === 0) {
-    return format(date, 'h', { locale });
+    return format(date, 'h', { ...locale });
   }
 
-  return format(date, 'h:mm', { locale });
+  return format(date, 'h:mm', { ...locale });
 };
 
 type Options = {
