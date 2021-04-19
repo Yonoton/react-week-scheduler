@@ -1,4 +1,6 @@
-import { getDay, isSameDay, setDay } from 'date-fns';
+import getDay from 'date-fns/getDay';
+import isSameDay from 'date-fns/isSameDay';
+import setDay from 'date-fns/setDay';
 import { CellInfo, DateRange, MapCellInfoToDateRange } from '../types';
 import { createMapCellInfoToContiguousDateRange } from './createMapCellInfoToContiguousDateRange';
 

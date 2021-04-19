@@ -1,4 +1,4 @@
-import { compareAsc } from 'date-fns';
+import compareAsc from 'date-fns/compareAsc';
 import _mergeRanges from 'merge-ranges';
 import { ScheduleType } from '../types';
 

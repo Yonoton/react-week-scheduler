@@ -8,10 +8,10 @@ var React = require('react');
 var React__default = _interopDefault(React);
 var useComponentSize = _interopDefault(require('@rehooks/component-size'));
 var classcat = _interopDefault(require('classcat'));
-var startOfDay = _interopDefault(require('date-fns/start_of_day'));
+var startOfDay = _interopDefault(require('date-fns/startOfDay'));
 var format = _interopDefault(require('date-fns/format'));
-var addHours = _interopDefault(require('date-fns/add_hours'));
-var addDays = _interopDefault(require('date-fns/add_days'));
+var addHours = _interopDefault(require('date-fns/addHours'));
+var addDays = _interopDefault(require('date-fns/addDays'));
 var isDateEqual = _interopDefault(require('date-fns/isEqual'));
 var invariant = _interopDefault(require('invariant'));
 var isEqual = _interopDefault(require('lodash/isEqual'));
@@ -24,22 +24,21 @@ var Mousetrap = _interopDefault(require('mousetrap'));
 var clamp = _interopDefault(require('lodash/clamp'));
 var floor = _interopDefault(require('lodash/floor'));
 var round = _interopDefault(require('lodash/round'));
+var addMinutes = _interopDefault(require('date-fns/addMinutes'));
+var compareAsc = _interopDefault(require('date-fns/compareAsc'));
+var endOfDay = _interopDefault(require('date-fns/endOfDay'));
+var isBefore = _interopDefault(require('date-fns/isBefore'));
 var min = _interopDefault(require('date-fns/min'));
-var isBefore = _interopDefault(require('date-fns/is_before'));
-var endOfDay = _interopDefault(require('date-fns/end_of_day'));
-var compareAsc = _interopDefault(require('date-fns/compare_asc'));
-var addMinutes = _interopDefault(require('date-fns/add_minutes'));
 var range = _interopDefault(require('lodash/range'));
-var differenceInDays = _interopDefault(require('date-fns/difference_in_days'));
-var differenceInMinutes = _interopDefault(require('date-fns/difference_in_minutes'));
-var isEqual$1 = _interopDefault(require('date-fns/is_equal'));
-var setDay = _interopDefault(require('date-fns/set_day'));
+var differenceInMinutes = _interopDefault(require('date-fns/differenceInMinutes'));
+var differenceInDays = _interopDefault(require('date-fns/differenceInDays'));
+var setDay = _interopDefault(require('date-fns/setDay'));
 var _mergeRanges = _interopDefault(require('merge-ranges'));
-var getMinutes = _interopDefault(require('date-fns/get_minutes'));
+var getMinutes = _interopDefault(require('date-fns/getMinutes'));
 var Resizable = _interopDefault(require('re-resizable'));
 var Draggable = _interopDefault(require('react-draggable'));
 var VisuallyHidden = _interopDefault(require('@reach/visually-hidden'));
-var isSameDay = _interopDefault(require('date-fns/is_same_day'));
+var isSameDay = _interopDefault(require('date-fns/isSameDay'));
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -602,7 +601,7 @@ var createMapDateRangeToCells = function createMapDateRangeToCells(_ref) {var _r
 
       });
 
-      if (isEqual$1(end, startOfDay(end))) {
+      if (isDateEqual(end, startOfDay(end))) {
         cells.pop();
       }
 

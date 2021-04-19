@@ -1,4 +1,8 @@
-import { addMinutes, compareAsc, endOfDay, isBefore, min } from 'date-fns';
+import addMinutes from 'date-fns/addMinutes';
+import compareAsc from 'date-fns/compareAsc';
+import endOfDay from 'date-fns/endOfDay';
+import isBefore from 'date-fns/isBefore';
+import min from 'date-fns/min';
 import range from 'lodash/range';
 import { DateRange, MapCellInfoToDateRange } from '../types';
 import { cellToDate } from './cellToDate';

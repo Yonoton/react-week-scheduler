@@ -1,9 +1,7 @@
-import {
-  startOfDay,
-  isEqual,
-  differenceInMinutes,
-  differenceInDays,
-} from 'date-fns';
+import startOfDay from 'date-fns/startOfDay';
+import isEqual from 'date-fns/isEqual';
+import differenceInMinutes from 'date-fns/differenceInMinutes';
+import differenceInDays from 'date-fns/differenceInDays';
 import range from 'lodash/range';
 import { CellInfo, DateRange } from '../types';
 import { getSpan } from './getSpan';
