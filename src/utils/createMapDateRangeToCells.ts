@@ -1,7 +1,7 @@
-import differenceInDays from 'date-fns/difference_in_days';
-import differenceInMinutes from 'date-fns/difference_in_minutes';
-import isEqual from 'date-fns/is_equal';
-import startOfDay from 'date-fns/start_of_day';
+import startOfDay from 'date-fns/startOfDay';
+import isEqual from 'date-fns/isEqual';
+import differenceInMinutes from 'date-fns/differenceInMinutes';
+import differenceInDays from 'date-fns/differenceInDays';
 import range from 'lodash/range';
 import { CellInfo, DateRange } from '../types';
 import { getSpan } from './getSpan';

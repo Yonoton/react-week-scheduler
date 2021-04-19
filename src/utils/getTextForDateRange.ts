@@ -1,14 +1,14 @@
+import { Locale } from 'date-fns';
 import format from 'date-fns/format';
-import getMinutes from 'date-fns/get_minutes';
-import isSameDay from 'date-fns/is_same_day';
-
+import getMinutes from 'date-fns/getMinutes';
+import isSameDay from 'date-fns/isSameDay';
 const formatTemplate = 'ddd h:mma';
 
 const dropSame = (
   dates: [Date, Date],
   template: string,
   takeSecond: boolean = false,
-  locale: typeof import('date-fns/locale/en'),
+  locale: Locale,
 ): [string, string] => {
   const [first, second] = dates.map(date => format(date, template, { locale }));
   if (first !== second) {
@@ -24,18 +24,19 @@ const dropSame = (
 
 const formatHour = (
   date: Date,
-  locale: typeof import('date-fns/locale/en'),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  locale: any,
 ) => {
   if (getMinutes(date) === 0) {
-    return format(date, 'h', { locale });
+    return format(date, 'h', { ...locale });
   }
 
-  return format(date, 'h:mm', { locale });
+  return format(date, 'h:mm', { ...locale });
 };
 
 type Options = {
   dateRange: [Date, Date];
-  locale: typeof import('date-fns/locale/en');
+  locale: Locale;
   template?: string;
   template2?: string;
   includeDayIfSame?: boolean;

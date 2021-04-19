@@ -1,7 +1,7 @@
-import addMinutes from 'date-fns/add_minutes';
-import compareAsc from 'date-fns/compare_asc';
-import endOfDay from 'date-fns/end_of_day';
-import isBefore from 'date-fns/is_before';
+import addMinutes from 'date-fns/addMinutes';
+import compareAsc from 'date-fns/compareAsc';
+import endOfDay from 'date-fns/endOfDay';
+import isBefore from 'date-fns/isBefore';
 import min from 'date-fns/min';
 import range from 'lodash/range';
 import { DateRange, MapCellInfoToDateRange } from '../types';
@@ -23,10 +23,7 @@ export const createMapCellInfoToRecurringTimeRange: MapCellInfoToDateRange = ({
         toDay,
         originDate,
       });
-      let endDate = min(
-        addMinutes(startDate, toMin(spanY)),
-        endOfDay(startDate),
-      );
+      let endDate = min([addMinutes(startDate, toMin(spanY)),endOfDay(startDate)]);
 
       const range: DateRange = isBefore(startDate, endDate)
         ? [startDate, endDate]

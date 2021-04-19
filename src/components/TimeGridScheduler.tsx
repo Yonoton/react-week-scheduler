@@ -1,10 +1,10 @@
 import useComponentSize from '@rehooks/component-size';
 import classcat from 'classcat';
-import addDays from 'date-fns/add_days';
-import addHours from 'date-fns/add_hours';
+import startOfDay from 'date-fns/startOfDay';
 import format from 'date-fns/format';
-import isDateEqual from 'date-fns/is_equal';
-import startOfDay from 'date-fns/start_of_day';
+import addHours from 'date-fns/addHours';
+import addDays from 'date-fns/addDays';
+import isDateEqual from 'date-fns/isEqual';
 import invariant from 'invariant';
 import isEqual from 'lodash/isEqual';
 import times from 'lodash/times';
@@ -492,7 +492,7 @@ export const TimeGridScheduler = React.memo(function TimeGridScheduler({
                 className={classes['day-column']}
               >
                 <div className={classcat([classes.cell, classes.title])}>
-                  {format(addDays(originDate, i), 'ddd', { locale })}
+                  {format(addDays(originDate, i), 'cccc', { locale })}
                 </div>
               </div>
             ))}
